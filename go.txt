@@ -125,4 +125,66 @@ func main() {		//函数
 			}
 			fmt.Printf("a 的值为 ： %d\n",a)
 			}
-	
+	if...else 语句
+	switch  看例 switch1，2.go
+	select  每个case都必须事一个同学
+			所有channel表达式都会被求值
+			如果有某个通信可以进行，他就执行；其他被忽略
+			如果有多个case都可以运行，select会随机公平选出一个执行。其他不会执行
+				否则： 	如果有defaule子句，则执行该语句。
+						如果没有default字句，delect将阻塞，知道某个通信可以i运行；；go不会重新对channel或值进行求值
+七、go语言循环语句
+	有三种形式
+	1.for  init ；condition；post{}
+	2.for  condition{}
+	3.for  {}
+		init：一般为复制表达式，给控制变量赋初值；
+		condition：关系表达式或逻辑表达式，循环控制条件；
+		post：一般为复制表达式，给控制变量增量或减量
+	for嵌套循环
+		for [condition |  ( init; condition; increment ) | Range]
+		{
+		for [condition |  ( init; condition; increment ) | Range]
+		{
+			statement(s);
+		}
+		statement(s);
+		}
+	break 语句  用于终端当前for循环或跳出switch语句
+	continue   	跳过当前循环的剩余语句，然后继续进行下一轮循环。
+	goto   语句	将控制转移到被标记的语句。
+			goto  label
+			,,
+			,
+			label: statement;
+			
+八、go语言函数	
+		函数事基本的代码块，u哦那个与执行一个任务。
+		go 语言最少有哥main()函数。
+		函数声明告诉了编译器函数的名称，返回类型和参数。
+		go标准库提供了多种可动用的内置函数。
+		go语言函数定义格式如下：
+		
+			func function_name( [parament list] ) [return_types]{
+				函数体
+			}
+			
+		func ：函数由func开始声明
+		function_name:函数名称、函数名和参数列表一起构成了函数签名。
+		paramerter list:参数列表，参数就行一个占位符，当函数被调用时，你可以将值传递给参数，这个值被称为实参数。参数列表致电给的时参数类型、顺序、及参数个数。
+		return_types:返回类型，函数返回一列值。return——types是该列值的数据类型。
+		函数体：函数定义的代码集合
+
+		函数参数：函数入宫使用参数，该变量可称为函数的形象。
+					形象就像定义在函数体内的局部变量。
+			调用函数，可以通过两种方式来传递参数：
+				值传递：在调用是将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。
+				引用传递：指在调用函数时将实际参数的地址传递到函数中，那么在函数中参数所进行的修改，将影响到实际参数。  point.go
+				go默认使用值传递，在调用过程中不会ing下到实际参数。
+				
+		函数的用法	
+			函数作为值	函数顶以后可作为值来使用  function2.go
+			闭包		闭包是匿名函数，可在动态编程中使用
+			方法		方法就是一个包韩了接受者的函数
+
+		
