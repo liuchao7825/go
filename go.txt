@@ -249,3 +249,47 @@ func main() {		//函数
 		例如  prt.go 
 	5.指针数组 ptr2.go
 	6.指针作为函数参数  ptr3.go
+十二、go语言结构体
+	1.结构体格式：
+		type struct_variable_type {
+			member definition;
+			member definition;
+			....
+			member definition;
+		}
+	一旦定义了结构体类型，它就能用于变量的声明，语法格式如下：
+		variable_name := struct_variable_type {value1, value2 ...valuen}
+		或
+		variable_name := struct_variable_type {key1:value1, key2:value2...,keyn:valuen}
+		例子  value.go  
+	2.访问结构体成员
+		使用.操作符，格式为：
+		结构体.成员名   例子 value2.go  
+	3.结构体作为函数参数
+		将结构体作为参数传递给函数。  例子value3.go
+	4.结构体指针
+		格式：  var struct_pointer *Books
+十三、go语言切片（slice）
+	Go 语言切片是对数组的抽象。
+	1.Go数组的长度不可改变，在特定张静中这样的集合就不太使用，这时候需要使用内置类型切片（“动态数组”），与数组相比切片的长度是不固定的，可以追加元素，在追加时可能使切片的容量增大。
+		声明一个未指定大小的数组来定义切片
+		var identifier [] type
+		切片不需要说明长度，可以用make()函数来创建切片
+		var slice1 []type = make([] tyoe, len)
+		也可以简写为 slice1 := make([]type, len)
+		也可以指定容量，其中capacity为可选参数   make([]T, length, capacity)
+	2.切片初始化
+	s :=[] int {1, 2, 3}  
+	直接初始化切片，[]表示是切片类型，{1，2，3}初始化值一次是，1，2，3.其cap=len=3
+	s := arr[:]
+	初始化切片s，是数组arr的引用
+	s := arr[startIndex:endIndex]
+	将arr中从下标startindex到endIndex-1 下的元素创建为一个新的切片
+	s := arr[startIndex:]
+	缺省endIndex是将表示一直到arr的最后一个元素
+	s := arr[:endIndex]
+	缺省startIndex时将表示从arr的第一个元素开始
+	s1 := s[startIndex:endIndex]
+	通过切片s初始化切片s1
+	s :=make([]int, ken, cap)
+	通过内置函数make()初始化切片s，[]int标识为其元素类型为int的切片
