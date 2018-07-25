@@ -71,7 +71,7 @@ func main() {		//函数
 	g, h :123,"hello" 					这种不带声明格式的只能再函数体中出现
 	
 	值类型和引用类型
-	使用:= 可以搞笑的船舰一个新的变量，称之为初始化声明
+	使用:= 可以高效的创建一个新的变量，称之为初始化声明
 	再相同的代码块中，不能再次对相同的变量使用初始化声明如 a:= 20，但 a= 20是可以的。
 	未赋值而去使用会得到 （undefind）,只赋值二不使用（a declared  and not used）
 四、go语言常量
@@ -184,7 +184,7 @@ func main() {		//函数
 				
 		函数的用法	
 			函数作为值	函数顶以后可作为值来使用  function2.go   
-			闭包		闭包是匿名函数，可在动态编程中使用   bao.go 
+			闭包		闭包是匿名函数，可在动态编程中使用  package.go 
 			方法		方法就是一个包韩了接受者的函数		function3.go
 				go语言中同时有函数和方法。一个方法就是一个包含了接收者的函数，接受者可以是命名类型或者结构类型的一个值或者是一个指针。所有给定类型的方法属于该类型的方法集。语法格式如下：
 				func (variable_name variable_data_type) function_name() [return_type]{
@@ -293,3 +293,26 @@ func main() {		//函数
 	通过切片s初始化切片s1
 	s :=make([]int, ken, cap)
 	通过内置函数make()初始化切片s，[]int标识为其元素类型为int的切片
+	
+	len() 和 cap()函数。
+	切片是可索引的，并且可以由len()方法获取长度
+	切片提供了计算容量的方法cap()可以测量切片最长可以达到多少   slice.go 
+	3.空（nil）切片
+		一切再为初始化之前默认为inil，长度为0，  nil.go
+	4.切片截取
+		可以通过生物质下限及上线来设置结组切片[lower-bound:upper-bound],   slice2.go
+	5.append()和copy()函数 
+		如果想增加切片的容量，我们必须创建一个新的更大的切片并把原分片的内容都拷贝过来。
+		下面的代码描述了从草欸切片的copy方法和切片追加新元素的append方法  slice3.go
+十四、go语言范围（Range）
+	go语言中range关键字用于for循环中迭代数组（array）、通道（channel）或集合（map）的元素。再数组和切片中它返回元素的索引和索引对应的值，再集合中返回key-value对的key值。  range.go
+十五、Go语言Map（集合）
+	Map是一种无需的简直对的集合。剋通过key来快速检索数据，key类似于索引，指向数据的值。Map是使用hash表来实现的。
+	1.定义Map
+	可以使用内建函数make也可以使用map关键字来定义Map：
+	/*声明变量，默认map是nil*/
+	var map_variable map[ky_data_type] value_data_type
+	/*使用make函数*/
+	map_variable := make(map[key_data_type]value_data_type)   
+	创建和使用map   map.go
+	
